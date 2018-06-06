@@ -37,7 +37,16 @@ namespace TeindaMoyaCliente.iOS
             };
 
             btnPagar.TouchUpInside += delegate {
-                
+                pedidoRespuesta.Pagado = true;
+                var result = Task.Run(async () => { return await servicios.crearActualizarPedido(pedidoRespuesta); }).Result;
+                ViewController.pedidoIDStatic = "";
+                //Create Alert
+                var okCancelAlertController = UIAlertController.Create("Compra exitosa!", "Compra realizada con exito!", UIAlertControllerStyle.Alert);
+                //Add Actions
+                okCancelAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, alert => this.PerformSegue("segueCarritoArticulos", this)));
+                //okCancelAlertController.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, alert => Console.WriteLine("Cancel was clicked")));
+                //Present Alert
+                PresentViewController(okCancelAlertController, true, null);
             };
         }
 
