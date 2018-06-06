@@ -81,6 +81,10 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TeindaMoya-Cliente\TeindaMoya-Cliente.csproj">
@@ -94,6 +98,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Modelos\" />
+    <Folder Include="interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -102,6 +108,7 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -110,6 +117,46 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuController.cs" />
+    <Compile Include="MenuController.designer.cs">
+      <DependentUpon>MenuController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArticulosDetalleController.cs" />
+    <Compile Include="ArticulosDetalleController.designer.cs">
+      <DependentUpon>ArticulosDetalleController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Usuario.cs" />
+    <Compile Include="Servicios.cs" />
+    <Compile Include="AppPreferences.cs" />
+    <Compile Include="Modelos\Articulo.cs" />
+    <Compile Include="ArticuosTVS.cs" />
+    <Compile Include="ArticuloCell.cs" />
+    <Compile Include="ArticuloCell__.designer.cs">
+      <DependentUpon>ArticuloCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarritoController.cs" />
+    <Compile Include="CarritoController.designer.cs">
+      <DependentUpon>CarritoController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Pedido.cs" />
+    <Compile Include="Modelos\ArticulosPedido.cs" />
+    <Compile Include="CarritoCell.cs" />
+    <Compile Include="CarritoCell.designer.cs">
+      <DependentUpon>CarritoCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarritoTVS.cs" />
+    <Compile Include="ArticuloDetalleCarritoController.cs" />
+    <Compile Include="ArticuloDetalleCarritoController.designer.cs">
+      <DependentUpon>ArticuloDetalleCarritoController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="quitarArtController.cs" />
+    <Compile Include="quitarArtController.designer.cs">
+      <DependentUpon>quitarArtController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\carrito.png" />
+    <BundleResource Include="Resources\mercado_moya.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
